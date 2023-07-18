@@ -37,7 +37,7 @@ model = pickle.load(open('model_embedding.pkl','rb'))
 
 # Fetch posters from the TMDb database
 def fetch_poster(movie_id):
-    response = requests.get(f'https://api.themoviedb.org/3/movie/{}?api_key={API_KEY}&language=en-US'.format(movie_id))
+    response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US')
     data = response.json()
     
     return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
